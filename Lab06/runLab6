@@ -1,0 +1,7 @@
+javac lab6.java
+
+echo Running Tests
+java lab6 mem_stream.1 > my1.out
+java lab6 mem_stream.2 > my2.out
+diff -bw my1.out mem_stream1.out
+diff -bw my2.out mem_stream2.out

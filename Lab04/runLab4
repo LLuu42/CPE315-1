@@ -1,0 +1,28 @@
+echo "Compiling"
+javac -Xlint lab4.java
+
+echo "Running Test 1"
+java lab4 lab4_test1.asm lab4_test1.script > lab4_test1.output
+
+echo "Running Test 2"
+java lab4 lab4_test2.asm lab4_test2.script > lab4_test2.output
+
+echo "Running Test 3"
+java lab4 lab4_fib10.asm lab4_fib10.script > lab4_fib10.output
+
+echo "Running Test 4"
+java lab4 lab4_fib20.asm lab4_fib20.script > lab4_fib20.output
+
+echo "Diff 1"
+diff -w -B lab4_test1.output lab4_test1.output.txt
+
+echo "Diff 2"
+diff -w -B lab4_test2.output lab4_test2.output.txt
+
+echo "Diff 3"
+diff -w -B lab4_fib10.output lab4_fib10.output.txt
+
+echo "Diff 4"
+diff -w -B lab4_fib20.output lab4_fib20.output.txt
+
+rm *.output

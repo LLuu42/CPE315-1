@@ -1,0 +1,20 @@
+echo "Compiling"
+javac -Xlint lab5.java
+
+echo "Running Test 1: ASM + Script Arguments"
+java lab5 lab4_fib20.asm lab5.script > lab5_ghr2.output
+
+diff -w -B lab5_ghr2.output lab5_ghr2.output.txt
+
+echo "Running Test 2: ASM + Script + Numbers"
+java lab5 lab4_fib20.asm lab5.script 2 > lab5_ghr2.output
+java lab5 lab4_fib20.asm lab5.script 4 > lab5_ghr4.output
+java lab5 lab4_fib20.asm lab5.script 8 > lab5_ghr8.output
+java lab5 figure.asm figure.script
+
+diff -w -B lab5_ghr2.output lab5_ghr2.output.txt
+diff -w -B lab5_ghr4.output lab5_ghr4.output.txt
+diff -w -B lab5_ghr8.output lab5_ghr8.output.txt
+diff -w -B coordinates.csv coordinates.csv.txt
+
+rm *.output

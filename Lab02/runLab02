@@ -1,0 +1,16 @@
+echo "Compiling"
+make lab2
+
+echo "Running"
+java lab2 test1.asm > test1.output
+java lab2 test2.asm > test2.output
+java lab2 test3.asm > test3.output
+
+echo "Diff 1"
+diff -w -B test1.output test1.output.txt
+
+echo "Diff 2"
+diff -w -B test2.output test2.output.txt
+
+echo "Diff 3"
+diff -w -B test3.output test3.output.txt

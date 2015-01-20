@@ -1,0 +1,20 @@
+echo "Compiling"
+javac -Xlint lab3.java
+
+echo "Running Test 1"
+java lab3 sum_10.asm sum_10.script > sum_10.output
+
+echo "Running Test 2"
+java lab3 lab3_fib.asm lab3_fib.script > lab3_fib.output
+
+echo "Running Test 3"
+java lab3 lab3_test3.asm lab3_test3.script > lab3_test3.output
+
+echo "Diff 1"
+diff -w -B sum_10.output sum_10.output.txt
+
+echo "Diff 2"
+diff -w -B lab3_fib.output lab3_fib.output.txt
+
+echo "Diff 3"
+diff -w -B lab3_test3.output lab3_test3.output.txt
